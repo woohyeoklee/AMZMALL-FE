@@ -1,5 +1,5 @@
 export const COLLECTIONS = {
   PRODUCT: 'PRODUCT',
   ADBANNER: 'ADBANNER',
-  SIZE: 'SIZE',
+  USER: 'USER',
 } as const

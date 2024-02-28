@@ -21,7 +21,7 @@ export default function Router() {
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/my/like" element={<LikePage />} />
       <Route path="/my/drawList" element={<DrawListPage />} />
-      <Route path="/draw" element={<DrawPage />} />
+      <Route path="/draw/:id" element={<DrawPage />} />
       <Route path="/test" element={<TestPage />} />
     </Routes>
   )
