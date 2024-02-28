@@ -10901,7 +10901,7 @@ __metadata:
     react-infinite-scroll-component: "npm:^6.1.0"
     react-intersection-observer: "npm:^9.5.2"
     react-query: "npm:^3.39.3"
-    react-router-dom: "npm:^6.15.0"
+    react-router-dom: "npm:^6.22.1"
     react-scripts: "npm:5.0.1"
     recoil: "npm:^0.7.7"
     swiper: "npm:9"
@@ -12270,7 +12270,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.15.0":
+"react-router-dom@npm:^6.22.1":
   version: 6.22.1
   resolution: "react-router-dom@npm:6.22.1"
   dependencies:
