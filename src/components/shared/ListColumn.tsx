@@ -1,13 +1,13 @@
-import { css } from '@emotion/react';
-import Flex from './Flex';
-import Text from './Text';
+import { css } from '@emotion/react'
+import Flex from './Flex'
+import Text from './Text'
 
 interface ListColumnProps {
-  top?: React.ReactNode;
-  contents: React.ReactNode;
-  bottom?: React.ReactNode;
-  onClick?: () => void;
-  as?: 'div' | 'article';
+  top?: React.ReactNode
+  contents: React.ReactNode
+  bottom?: React.ReactNode
+  onClick?: () => void
+  as?: 'div' | 'article'
 }
 
 function ListColumn({
@@ -18,12 +18,18 @@ function ListColumn({
   onClick,
 }: ListColumnProps) {
   return (
-    <Flex as={as} css={listColumnContainerStyles} onClick={onClick} align="center">
+    <Flex
+      direction="column"
+      as={as}
+      css={listColumnContainerStyles}
+      onClick={onClick}
+      align="center"
+    >
       <Flex css={listColumnTopStyles}>{top}</Flex>
       <Flex css={listColumnContentsStyles}>{contents}</Flex>
       <Flex>{bottom}</Flex>
     </Flex>
-  );
+  )
 }
 
 const listColumnContainerStyles = css`
@@ -37,7 +43,6 @@ const listColumnTopStyles = css`
 const listColumnContentsStyles = css`
   flex: 1;
 `
-
 
 function ListColumnTexts({
   title,

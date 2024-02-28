@@ -1,7 +1,11 @@
+import AdBannerAddButton from '@/components/test/AdBannerAddButton'
+import ProudctListAddButton from '@components/test/ProudctListAddButton'
+
 function TestPage() {
   return (
     <div>
-      <h1>Test</h1>
+      <ProudctListAddButton />
+      <AdBannerAddButton />
     </div>
   )
 }

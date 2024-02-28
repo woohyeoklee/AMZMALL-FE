@@ -7619,9 +7619,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^10.16.2":
-  version: 10.18.0
-  resolution: "framer-motion@npm:10.18.0"
+"framer-motion@npm:^11.0.6":
+  version: 11.0.6
+  resolution: "framer-motion@npm:11.0.6"
   dependencies:
     "@emotion/is-prop-valid": "npm:^0.8.2"
     tslib: "npm:^2.4.0"
@@ -7636,7 +7636,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10/8dc61e16af34ea7c7e830e03f588c54b7a186a767787eb6373ac692bbffa219959d50b7cf983f54305951e121ea7d50ebd4819920290fc6ad58b03fc5eb2bdde
+  checksum: 10/f18f5d40045029238b9d05e646ff950856bc7d0b0d9210fca59e8419c7e42eabf96e4481f8a753c13a13f306626515d8bf746e456d8d246df2060b02ab320926
   languageName: node
   linkType: hard
 
@@ -10358,6 +10358,55 @@ __metadata:
   languageName: node
   linkType: hard
 
+"my-app@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "my-app@workspace:."
+  dependencies:
+    "@babel/preset-react": "npm:^7.23.3"
+    "@craco/craco": "npm:^7.1.0"
+    "@emotion/babel-plugin": "npm:^11.11.0"
+    "@emotion/react": "npm:^11.11.4"
+    "@emotion/styled": "npm:^11.11.0"
+    "@testing-library/jest-dom": "npm:^6.0.1"
+    "@testing-library/react": "npm:^13.0.0"
+    "@testing-library/user-event": "npm:^13.2.1"
+    "@types/jest": "npm:^27.0.1"
+    "@types/lodash": "npm:^4.14.197"
+    "@types/lodash.flatten": "npm:^4.4.7"
+    "@types/node": "npm:^20.11.1"
+    "@types/qs": "npm:^6.9.8"
+    "@types/react": "npm:^18.0.0"
+    "@types/react-dom": "npm:^18.0.0"
+    "@types/testing-library__jest-dom": "npm:^6.0.0"
+    "@types/validator": "npm:^13.11.1"
+    craco-alias: "npm:^3.0.1"
+    eslint: "npm:^8.57.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-config-react-app: "npm:^7.0.1"
+    eslint-plugin-prettier: "npm:^5.1.3"
+    eslint-plugin-react: "npm:^7.33.2"
+    firebase: "npm:^10.8.0"
+    framer-motion: "npm:^11.0.6"
+    lodash: "npm:^4.17.21"
+    lodash.flatten: "npm:^4.4.0"
+    prettier: "npm:^3.2.5"
+    qs: "npm:^6.11.2"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-infinite-scroll-component: "npm:^6.1.0"
+    react-intersection-observer: "npm:^9.5.2"
+    react-query: "npm:^3.39.3"
+    react-router-dom: "npm:^6.22.1"
+    react-scripts: "npm:5.0.1"
+    recoil: "npm:^0.7.7"
+    swiper: "npm:^11.0.7"
+    typescript: "npm:^4.4.2"
+    validator: "npm:^13.11.0"
+    web-vitals: "npm:^2.1.0"
+    webpack-bundle-analyzer: "npm:^4.9.1"
+  languageName: unknown
+  linkType: soft
+
 "mz@npm:^2.7.0":
   version: 2.7.0
   resolution: "mz@npm:2.7.0"
@@ -10862,55 +10911,6 @@ __metadata:
   checksum: 10/407cee8e0a3a4c5cd472559bca8b6a45b82c124e9a4703302326e9ab60fc1081442ada4e02628efef1eb16197ddc7f8822f5a91fd7d7c86b51f530aedb17dfa2
   languageName: node
   linkType: hard
-
-"part2_mcard@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "part2_mcard@workspace:."
-  dependencies:
-    "@babel/preset-react": "npm:^7.23.3"
-    "@craco/craco": "npm:^7.1.0"
-    "@emotion/babel-plugin": "npm:^11.11.0"
-    "@emotion/react": "npm:^11.11.4"
-    "@emotion/styled": "npm:^11.11.0"
-    "@testing-library/jest-dom": "npm:^6.0.1"
-    "@testing-library/react": "npm:^13.0.0"
-    "@testing-library/user-event": "npm:^13.2.1"
-    "@types/jest": "npm:^27.0.1"
-    "@types/lodash": "npm:^4.14.197"
-    "@types/lodash.flatten": "npm:^4.4.7"
-    "@types/node": "npm:^20.11.1"
-    "@types/qs": "npm:^6.9.8"
-    "@types/react": "npm:^18.0.0"
-    "@types/react-dom": "npm:^18.0.0"
-    "@types/testing-library__jest-dom": "npm:^6.0.0"
-    "@types/validator": "npm:^13.11.1"
-    craco-alias: "npm:^3.0.1"
-    eslint: "npm:^8.57.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-config-react-app: "npm:^7.0.1"
-    eslint-plugin-prettier: "npm:^5.1.3"
-    eslint-plugin-react: "npm:^7.33.2"
-    firebase: "npm:^10.8.0"
-    framer-motion: "npm:^10.16.2"
-    lodash: "npm:^4.17.21"
-    lodash.flatten: "npm:^4.4.0"
-    prettier: "npm:^3.2.5"
-    qs: "npm:^6.11.2"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-infinite-scroll-component: "npm:^6.1.0"
-    react-intersection-observer: "npm:^9.5.2"
-    react-query: "npm:^3.39.3"
-    react-router-dom: "npm:^6.22.1"
-    react-scripts: "npm:5.0.1"
-    recoil: "npm:^0.7.7"
-    swiper: "npm:9"
-    typescript: "npm:^4.4.2"
-    validator: "npm:^13.11.0"
-    web-vitals: "npm:^2.1.0"
-    webpack-bundle-analyzer: "npm:^4.9.1"
-  languageName: unknown
-  linkType: soft
 
 "pascal-case@npm:^3.1.2":
   version: 3.1.2
@@ -13300,13 +13300,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssr-window@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "ssr-window@npm:4.0.2"
-  checksum: 10/075b67794be868103d73299be948cd559be7b40499fe4247c7a28702f9f1588c53ca8de64520ae8e36214caa6ff728b222101d7e75d5df39e7ff12e148d6a517
-  languageName: node
-  linkType: hard
-
 "ssri@npm:^10.0.0":
   version: 10.0.5
   resolution: "ssri@npm:10.0.5"
@@ -13698,12 +13691,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:9":
-  version: 9.4.1
-  resolution: "swiper@npm:9.4.1"
-  dependencies:
-    ssr-window: "npm:^4.0.2"
-  checksum: 10/900db2e4d9a812ada9c4261cc5cba335bd137e98211b5a072c64b71d0d4df213933ccd9da62e4719a3547d51d3d50d1247afe2aa6fe00bfa525de4e3c1e4c33f
+"swiper@npm:^11.0.7":
+  version: 11.0.7
+  resolution: "swiper@npm:11.0.7"
+  checksum: 10/438e21078634545167be8ab97b85c2a9313f943b56b1d52ebd203374754f1c328deefe864b48379ec2775783e282296bafcff2312d52bc979d8659f9aa88659a
   languageName: node
   linkType: hard
 

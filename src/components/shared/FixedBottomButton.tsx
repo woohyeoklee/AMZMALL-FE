@@ -1,14 +1,14 @@
 import { css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 
-import { createPortal } from 'react-dom'
 import { colors } from '@styles/colorPalette'
+import { createPortal } from 'react-dom'
 
 import Button from '@shared/Button'
 
 interface FixedBottomButtonProps {
   label: string
-  onClick: () => void
+  onClick?: () => void
   disabled?: boolean
 }
 
