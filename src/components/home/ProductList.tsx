@@ -60,8 +60,8 @@ function ProductList() {
                   <img
                     src={product.imageUrls[0]}
                     alt="product"
-                    width={60}
-                    height={60}
+                    width={80}
+                    height={80}
                   />
                 }
                 contents={

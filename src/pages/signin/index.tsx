@@ -14,9 +14,17 @@ function SignInPage() {
   const handleSubmit = useCallback(
     async (formValues: FormValues) => {
       const { email, password } = formValues
+      const storedUrl = localStorage.getItem('redirectUrl')
       try {
         await signInWithEmailAndPassword(auth, email, password)
-        navigate('/')
+        {
+          if (storedUrl != null) {
+            localStorage.removeItem('redirectUrl') // 사용된 URL은 삭제
+            navigate(storedUrl)
+          } else {
+            navigate('/')
+          }
+        }
       } catch (e) {
         if (e instanceof FirebaseError) {
           if (e.code === 'auth/invalid-credential') {

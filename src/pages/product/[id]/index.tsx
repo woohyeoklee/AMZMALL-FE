@@ -5,17 +5,41 @@ import ListRow from '@/components/shared/ListRow'
 import Spacing from '@/components/shared/Spacing'
 import Text from '@/components/shared/Text'
 import Top from '@/components/shared/Top'
+import { useAlertContext } from '@/contexts/AlertContext'
+import useUser from '@/hooks/auth/useUser'
 import { getProduct } from '@/remote/product'
 import { css } from '@emotion/react'
 import { motion } from 'framer-motion'
+import { useCallback } from 'react'
 import { useQuery } from 'react-query'
-import { useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 function ProductDetailPage() {
+  const location = useLocation()
+
   const { id = '' } = useParams()
+  const navigate = useNavigate()
+  const user = useUser()
+  const { open } = useAlertContext()
+
   const { data } = useQuery(['product', id], () => getProduct(id), {
     enabled: id != '',
   })
+
+  const moveToDrawPage = useCallback(() => {
+    if (user == null) {
+      open({
+        title: '로그인이 필요합니다',
+        onButtonClick: () => {
+          localStorage.setItem('redirectUrl', location.pathname)
+          console.log('redirectUrl', location.pathname)
+          navigate('/signin')
+        },
+      })
+      return
+    }
+    navigate(`/draw/${id}`)
+  }, [user, id, open, navigate])
 
   if (data == null) {
     return null
@@ -73,7 +97,7 @@ function ProductDetailPage() {
             <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
           </Flex>
         ) : null}
-        <FixedBottomButton label="드로우 신청하기" />
+        <FixedBottomButton label="드로우 신청하기" onClick={moveToDrawPage} />
       </Flex>
     </div>
   )
