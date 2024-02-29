@@ -37,7 +37,7 @@ function DrawPage() {
         }
         setReadyToPoll(true)
       },
-      onError: () => { },
+      onError: () => {},
       suspense: true,
     },
   })
@@ -78,7 +78,7 @@ function DrawPage() {
     return null
   }
   if (readyToPoll || 드로우신청중인가) {
-    return <FullPageLoader message='결제 진행중입니다.' />
+    return <FullPageLoader message="결제 진행중입니다." />
   }
 
   return <Draw onSubmit={mutate} />
