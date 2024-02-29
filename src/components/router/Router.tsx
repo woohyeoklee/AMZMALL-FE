@@ -10,7 +10,9 @@ import SignInPage from '@pages/signin'
 import SignUpPage from '@pages/signup'
 import TestPage from '@pages/test'
 
+import DrawDonePage from '@/pages/draw/done'
 import PrivateRouter from '@components/auth/PrivateRouter'
+import { Suspense } from 'react'
 
 export default function Router() {
   return (
@@ -48,7 +50,17 @@ export default function Router() {
         path="/draw/:id"
         element={
           <PrivateRouter>
-            <DrawPage />
+            <Suspense fallback={<></>}>
+              <DrawPage />
+            </Suspense>
+          </PrivateRouter>
+        }
+      />
+      <Route
+        path="/draw/done"
+        element={
+          <PrivateRouter>
+            <DrawDonePage />
           </PrivateRouter>
         }
       />

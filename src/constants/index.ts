@@ -1,5 +1,6 @@
 export const COLLECTIONS = {
   PRODUCT: 'PRODUCT',
+  PRODUCT_DRAW: 'PRODUCT_DRAW',
   ADBANNER: 'ADBANNER',
   USER: 'USER',
 } as const

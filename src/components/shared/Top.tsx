@@ -20,7 +20,7 @@ function Top({ title, subTitle }: TopProps) {
 }
 
 const containerStyles = css`
-  padding: 24px;
+  padding: 10px 20px;
 `
 
 export default Top

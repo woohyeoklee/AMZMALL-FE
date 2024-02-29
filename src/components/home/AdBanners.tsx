@@ -36,7 +36,7 @@ function AdBanners() {
 }
 
 const Container = styled.div`
-  padding: 24px;
+  padding: 16px 24px;
 `
 
 const bannerContainerStyles = css`

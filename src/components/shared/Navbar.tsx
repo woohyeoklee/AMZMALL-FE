@@ -8,6 +8,7 @@ import Flex from '@shared/Flex'
 import { useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Button from './Button'
+import Text from './Text'
 
 function Navbar() {
   const location = useLocation()
@@ -37,7 +38,11 @@ function Navbar() {
 
   return (
     <Flex justify="space-between" align="center" css={navbarContainerStyles}>
-      <Link to="/">홈</Link>
+      <Link to="/">
+        <Text bold={true} typography="t3">
+          AMZDRAW
+        </Text>
+      </Link>
       {renderButton()}
     </Flex>
   )

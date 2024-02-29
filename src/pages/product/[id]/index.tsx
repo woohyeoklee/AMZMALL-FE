@@ -97,7 +97,10 @@ function ProductDetailPage() {
             <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
           </Flex>
         ) : null}
-        <FixedBottomButton label="드로우 신청하기" onClick={moveToDrawPage} />
+        <FixedBottomButton
+          label="제품 출시 전 미리 정보를 저장해 보세요!"
+          onClick={moveToDrawPage}
+        />
       </Flex>
     </div>
   )
