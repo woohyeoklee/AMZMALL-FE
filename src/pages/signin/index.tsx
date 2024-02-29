@@ -17,13 +17,11 @@ function SignInPage() {
       const storedUrl = localStorage.getItem('redirectUrl')
       try {
         await signInWithEmailAndPassword(auth, email, password)
-        {
-          if (storedUrl != null) {
-            localStorage.removeItem('redirectUrl') // 사용된 URL은 삭제
-            navigate(storedUrl)
-          } else {
-            navigate('/')
-          }
+        if (storedUrl !== null) {
+          localStorage.removeItem('redirectUrl') // 사용된 URL은 삭제
+          navigate(storedUrl)
+        } else {
+          navigate('/')
         }
       } catch (e) {
         if (e instanceof FirebaseError) {
@@ -45,7 +43,7 @@ function SignInPage() {
         })
       }
     },
-    [open],
+    [open, navigate],
   )
 
   return (

@@ -23,7 +23,7 @@ function ProductDetailPage() {
   const { open } = useAlertContext()
 
   const { data } = useQuery(['product', id], () => getProduct(id), {
-    enabled: id != '',
+    enabled: id !== '',
   })
 
   const moveToDrawPage = useCallback(() => {
@@ -39,7 +39,7 @@ function ProductDetailPage() {
       return
     }
     navigate(`/draw/${id}`)
-  }, [user, id, open, navigate])
+  }, [user, id, open, navigate, location.pathname])
 
   if (data == null) {
     return null
