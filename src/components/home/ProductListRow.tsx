@@ -1,47 +1,44 @@
-import { getProducts } from '@/remote/product'
-import { flatten } from 'lodash'
-
-import ListColumn from '@shared/ListColumn'
-import { useCallback } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import { useInfiniteQuery } from 'react-query'
 import { useNavigate } from 'react-router-dom'
+import useProducts from '../productList/hooks/useProducts'
 import Badge from '../shared/Badge'
 import ListRow from '../shared/ListRow'
 
-function ProductList() {
-  const {
-    data,
-    hasNextPage = false,
-    fetchNextPage,
-    isFetching,
-  } = useInfiniteQuery(
-    ['products'],
-    ({ pageParam }) => {
-      return getProducts(pageParam)
-    },
-    {
-      getNextPageParam: (snapshot) => {
-        return snapshot.lastVisible
-      },
-      suspense: true,
-    },
-  )
+function ProductListRow() {
+  // const {
+  //   data,
+  //   hasNextPage = false,
+  //   fetchNextPage,
+  //   isFetching,
+  // } = useInfiniteQuery(
+  //   ['products'],
+  //   ({ pageParam }) => {
+  //     return getProducts(pageParam)
+  //   },
+  //   {
+  //     getNextPageParam: (snapshot) => {
+  //       return snapshot.lastVisible
+  //     },
+  //     suspense: true,
+  //   },
+  // )
   const navigate = useNavigate()
 
-  const loadMore = useCallback(() => {
-    if (hasNextPage === false || isFetching) {
-      return
-    }
+  // const loadMore = useCallback(() => {
+  //   if (hasNextPage === false || isFetching) {
+  //     return
+  //   }
 
-    fetchNextPage()
-  }, [fetchNextPage, hasNextPage, isFetching])
+  //   fetchNextPage()
+  // }, [fetchNextPage, hasNextPage, isFetching])
 
-  if (data == null) {
+  const { data: products, hasNextPage, loadMore } = useProducts()
+
+  if (products == null) {
     return null
   }
 
-  const products = flatten(data?.pages.map(({ items }) => items))
+  // const products = flatten(data?.pages.map(({ items }) => items))
 
   return (
     <div>
@@ -66,7 +63,7 @@ function ProductList() {
                   />
                 }
                 contents={
-                  <ListColumn.Texts
+                  <ListRow.Texts
                     title={product.corpName}
                     subTitle={product.name}
                   />
@@ -89,4 +86,4 @@ function ProductList() {
   )
 }
 
-export default ProductList
+export default ProductListRow

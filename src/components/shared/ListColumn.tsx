@@ -1,11 +1,12 @@
 import { css } from '@emotion/react'
+import { ReactNode } from 'react'
+import Text from '../shared/Text'
 import Flex from './Flex'
-import Text from './Text'
 
 interface ListColumnProps {
-  top?: React.ReactNode
-  contents: React.ReactNode
-  bottom?: React.ReactNode
+  top?: ReactNode
+  contents: ReactNode
+  bottom?: ReactNode
   onClick?: () => void
   as?: 'div' | 'article'
 }
@@ -19,29 +20,35 @@ function ListColumn({
 }: ListColumnProps) {
   return (
     <Flex
-      direction="column"
       as={as}
-      css={listColumnContainerStyles}
+      direction="column"
+      css={listColumnContainer}
       onClick={onClick}
-      align="center"
     >
-      <Flex css={listColumnTopStyles}>{top}</Flex>
-      <Flex css={listColumnContentsStyles}>{contents}</Flex>
-      <Flex>{bottom}</Flex>
+      {top && <div css={topStyles}>{top}</div>}
+      <div css={contentsStyles}>{contents}</div>
+      {bottom && <div css={bottomStyles}>{bottom}</div>}
     </Flex>
   )
 }
 
-const listColumnContainerStyles = css`
-  padding: 8px 24px;
+const listColumnContainer = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
-const listColumnTopStyles = css`
-  margin-bottom: 14px;
+const topStyles = css`
+  margin-bottom: 5px;
 `
 
-const listColumnContentsStyles = css`
+const contentsStyles = css`
   flex: 1;
+  margin-bottom: 8px;
+`
+
+const bottomStyles = css`
+  margin-bottom: 5px;
 `
 
 function ListColumnTexts({
@@ -52,12 +59,21 @@ function ListColumnTexts({
   subTitle: React.ReactNode
 }) {
   return (
-    <Flex direction="column">
-      <Text bold={true}>{title}</Text>
+    <div css={textsContainer}>
       <Text typography="t7">{subTitle}</Text>
-    </Flex>
+      <Text typography="t5" bold>
+        {title}
+      </Text>
+    </div>
   )
 }
+
+const textsContainer = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
 ListColumn.Texts = ListColumnTexts
 

@@ -43,7 +43,9 @@ function DrawPage() {
         }
         setReadyToPoll(true)
       },
-      onError: () => { },
+      onError: () => {
+        console.log('error')
+      },
       suspense: true,
     },
   })

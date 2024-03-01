@@ -11,7 +11,11 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const client = new QueryClient({
-  defaultOptions: {},
+  defaultOptions: {
+    queries: {
+      retry: 0,
+    },
+  },
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
