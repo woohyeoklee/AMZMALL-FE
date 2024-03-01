@@ -10,8 +10,8 @@ function Carousel({ images }: { images: string[] }) {
             <img
               src={imageUrl}
               alt={`${idx + 1}번째 이미지`}
-              width={500}
-              height={500}
+              width="100%"
+              height="100%"
             />
           </SwiperSlide>
         ))}

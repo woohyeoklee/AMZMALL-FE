@@ -44,6 +44,7 @@ const RAW_RUNTIME_STATE =
           ["@types/testing-library__jest-dom", "npm:6.0.0"],\
           ["@types/validator", "npm:13.11.9"],\
           ["craco-alias", "npm:3.0.1"],\
+          ["date-fns", "npm:3.3.1"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-prettier", "virtual:ddccc941eb8b35cd4b898a64351d8bba4ecc85eb47e8f1b36dce7852d6c3635665e0fc5464861f723d175edb2248ce0fa54dfefb9b5e4d2fdaef4b2353c4aa82#npm:9.1.0"],\
           ["eslint-config-react-app", "virtual:ddccc941eb8b35cd4b898a64351d8bba4ecc85eb47e8f1b36dce7852d6c3635665e0fc5464861f723d175edb2248ce0fa54dfefb9b5e4d2fdaef4b2353c4aa82#npm:7.0.1"],\
@@ -9421,6 +9422,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["date-fns", [\
+      ["npm:3.3.1", {\
+        "packageLocation": "./.yarn/cache/date-fns-npm-3.3.1-794b72f5e7-9823193676.zip/node_modules/date-fns/",\
+        "packageDependencies": [\
+          ["date-fns", "npm:3.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["debounce", [\
       ["npm:1.2.1", {\
         "packageLocation": "./.yarn/cache/debounce-npm-1.2.1-b09266a260-0b95b2a9d8.zip/node_modules/debounce/",\
@@ -14465,6 +14475,7 @@ const RAW_RUNTIME_STATE =
           ["@types/testing-library__jest-dom", "npm:6.0.0"],\
           ["@types/validator", "npm:13.11.9"],\
           ["craco-alias", "npm:3.0.1"],\
+          ["date-fns", "npm:3.3.1"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-prettier", "virtual:ddccc941eb8b35cd4b898a64351d8bba4ecc85eb47e8f1b36dce7852d6c3635665e0fc5464861f723d175edb2248ce0fa54dfefb9b5e4d2fdaef4b2353c4aa82#npm:9.1.0"],\
           ["eslint-config-react-app", "virtual:ddccc941eb8b35cd4b898a64351d8bba4ecc85eb47e8f1b36dce7852d6c3635665e0fc5464861f723d175edb2248ce0fa54dfefb9b5e4d2fdaef4b2353c4aa82#npm:7.0.1"],\

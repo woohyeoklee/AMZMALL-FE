@@ -8,7 +8,7 @@ export interface Product {
   benefit: string[]
   promotion?: {
     title: string
-    endTime?: Date
+    EndTime: string
     terms: string
   }
   delivery?: string

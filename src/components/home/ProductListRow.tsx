@@ -5,40 +5,13 @@ import Badge from '../shared/Badge'
 import ListRow from '../shared/ListRow'
 
 function ProductListRow() {
-  // const {
-  //   data,
-  //   hasNextPage = false,
-  //   fetchNextPage,
-  //   isFetching,
-  // } = useInfiniteQuery(
-  //   ['products'],
-  //   ({ pageParam }) => {
-  //     return getProducts(pageParam)
-  //   },
-  //   {
-  //     getNextPageParam: (snapshot) => {
-  //       return snapshot.lastVisible
-  //     },
-  //     suspense: true,
-  //   },
-  // )
   const navigate = useNavigate()
-
-  // const loadMore = useCallback(() => {
-  //   if (hasNextPage === false || isFetching) {
-  //     return
-  //   }
-
-  //   fetchNextPage()
-  // }, [fetchNextPage, hasNextPage, isFetching])
 
   const { data: products, hasNextPage, loadMore } = useProducts()
 
   if (products == null) {
     return null
   }
-
-  // const products = flatten(data?.pages.map(({ items }) => items))
 
   return (
     <div>

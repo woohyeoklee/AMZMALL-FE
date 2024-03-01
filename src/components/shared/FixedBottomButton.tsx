@@ -46,6 +46,8 @@ const slideup = keyframes`
 `
 
 const Container = styled.div`
+  max-width: 767px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
   position: fixed;
   left: 0;
   right: 0;
