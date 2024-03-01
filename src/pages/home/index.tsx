@@ -1,6 +1,8 @@
 import AdBanners from '@/components/home/AdBanners'
 import ProductList from '@/components/home/ProductList'
+import ListRow from '@/components/shared/ListRow'
 import Top from '@/components/shared/Top'
+import { Suspense } from 'react'
 
 function HomePage() {
   return (
@@ -11,7 +13,13 @@ function HomePage() {
       />
       <AdBanners />
       <Top title="Popular Items" subTitle="Discover what's trending!" />
-      <ProductList />
+      <Suspense
+        fallback={[...new Array(10)].map((_, idx) => (
+          <ListRow.Skeleton key={idx} />
+        ))}
+      >
+        <ProductList />
+      </Suspense>
     </div>
   )
 }

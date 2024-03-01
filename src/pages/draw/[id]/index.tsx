@@ -10,6 +10,12 @@ import { updateDrawProduct } from '@/remote/draw'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
+const STATUS_MESSAGE = {
+  [DRAW_STATUS.REDAY]: '결제 진행을 준비하고 있습니다.',
+  [DRAW_STATUS.PROGRESS]: '결제가 진행중입니다. 잠시만 기다려주세요.',
+  [DRAW_STATUS.COMPLETE]: '결제가 완료되었습니다.',
+}
+
 function DrawPage() {
   const navigate = useNavigate()
   const { open } = useAlertContext()
@@ -37,12 +43,12 @@ function DrawPage() {
         }
         setReadyToPoll(true)
       },
-      onError: () => {},
+      onError: () => { },
       suspense: true,
     },
   })
 
-  usePollStatus({
+  const { data: status } = usePollStatus({
     onSuccess: async () => {
       await updateDrawProduct({
         userId: user?.uid as string,
@@ -78,7 +84,7 @@ function DrawPage() {
     return null
   }
   if (readyToPoll || 드로우신청중인가) {
-    return <FullPageLoader message="결제 진행중입니다." />
+    return <FullPageLoader message={STATUS_MESSAGE[status ?? 'REDAY']} />
   }
 
   return <Draw onSubmit={mutate} />

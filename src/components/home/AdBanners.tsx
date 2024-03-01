@@ -12,8 +12,23 @@ import { useQuery } from 'react-query'
 import 'swiper/css'
 
 function AdBanners() {
-  const { data } = useQuery(['adBanners'], () => getAdbanner())
-  console.log('data', data)
+  const { data, isLoading, isError } = useQuery(['adBanners'], () =>
+    getAdbanner(),
+  )
+  if (isLoading) {
+    return (
+      <Container>
+        <Flex direction="column" css={bannerContainerStyles}>
+          <Text bold={true}>&nbsp;</Text>
+          <Text typography="t7">&nbsp;</Text>
+        </Flex>
+      </Container>
+    )
+  }
+
+  if (isError || !data || data.length === 0) {
+    return <div>Error occurred or no data available.</div>
+  }
 
   return (
     <Container>

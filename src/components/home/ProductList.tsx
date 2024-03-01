@@ -24,6 +24,7 @@ function ProductList() {
       getNextPageParam: (snapshot) => {
         return snapshot.lastVisible
       },
+      suspense: true,
     },
   )
   const navigate = useNavigate()
@@ -47,7 +48,7 @@ function ProductList() {
       <InfiniteScroll
         dataLength={products.length}
         hasMore={hasNextPage}
-        loader={<></>}
+        loader={<ListRow.Skeleton />}
         next={loadMore}
         scrollThreshold="100px"
       >

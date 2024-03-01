@@ -5,6 +5,7 @@ import BasicInfo from '@components/draw/BasicInfo'
 import Terms from '@components/draw/Terms'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ProgressBar from '../shared/ProgressBar'
 
 function Draw({ onSubmit }: { onSubmit: (drawValues: DrawValues) => void }) {
   const user = useUser()
@@ -70,6 +71,7 @@ function Draw({ onSubmit }: { onSubmit: (drawValues: DrawValues) => void }) {
   return (
     <div>
       <div>
+        <ProgressBar progress={(drawValues.step as number) / 3} />
         {drawValues.step === 0 ? <Terms onNext={handleTemsChange} /> : null}
         {drawValues.step === 1 ? (
           <BasicInfo onNext={handleBasicInfoChange} />
