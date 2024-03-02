@@ -1,6 +1,8 @@
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { Product } from '../../models/product'
 // import useCart from '../hooks/cart/useCart';
+import useLike from '@/hooks/like/useLike'
+import addDelimiter from '@/utils/addDelimiter'
 import { css } from '@emotion/react'
 import useShare from '@hooks/useShare'
 import Flex from '../shared/Flex'
@@ -9,22 +11,23 @@ import Text from '../shared/Text'
 
 function ActionButtons({ product }: { product: Product }) {
   const share = useShare()
-  // const { data: likes, mutate: like } = useLike()
+  const { data: likes, mutate: like } = useLike()
 
-  const { name, price, imageUrls } = product
+  const { name, price, imageUrls, mainImageUrl, id } = product
 
-  // const isLike = Boolean(likes?.find((like) => like.hotelId === hotel.id))
+  const isLike = Boolean(likes?.find((like) => like.productId === product.id))
 
   return (
     <Flex css={containerStyles}>
-      {/* <Button
+      <Button
         label="찜하기"
         onClick={() => {
           like({
-            hotel: {
+            product: {
               name,
               mainImageUrl,
               id,
+              price,
             },
           })
         }}
@@ -33,13 +36,13 @@ function ActionButtons({ product }: { product: Product }) {
             ? 'https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-64.png'
             : 'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-heart-outline-64.png'
         }
-      /> */}
+      />
       <Button
         label="공유하기"
         onClick={() => {
           share({
             title: name,
-            description: price.toLocaleString() + '원',
+            description: `${addDelimiter(product.price)}원`,
             imageUrl: imageUrls[0],
             buttonLabel: 'AMZ DRAW 신청하기',
           })

@@ -36,6 +36,7 @@ export const product_list = [
       '* 이벤트는 온라인에서 진행됩니다',
       '* 이벤트 참여 시, 반드시  AMZDRAW 회원가입이 필요합니다',
     ],
+    delivery: '무료배송',
     imageUrls: [
       'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9572bdb3-2b03-4c54-9b83-adcf41c34d18/get-%E2%80%98em-while-you-can-snkrs-%EC%B6%94%EC%B2%9C-%EC%A0%9C%ED%92%88.jpg',
       'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/12095ffb-d55c-4f7b-94b0-41577c0fa1db/get-%E2%80%98em-while-you-can-snkrs-%EC%B6%94%EC%B2%9C-%EC%A0%9C%ED%92%88.jpg',
@@ -140,6 +141,7 @@ export const product_list = [
       '* 이벤트는 온라인에서 진행됩니다',
       '* 이벤트 참여 시, 반드시  AMZDRAW 회원가입이 필요합니다',
     ],
+    delivery: '무료배송',
     imageUrls: [
       'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/2b49243f-1c69-40e1-af12-5f35e37536cb/jordan-styles-kr.jpg',
       'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/8ef58752-f8dc-4e14-a4a4-47f97be15008/jordan-styles-kr.jpg',
@@ -154,18 +156,5 @@ export const product_list = [
       terms:
         '<p>본 이벤트는  AMZDRAW 본인 인증 회원 대상 앱 전용 이벤트입니다. 광고성 정보 수신 설정(앱푸시, 문자, 메일)에 모두 동의해야 응모 참여 가능하며, 구매입찰 버튼을 한 번 더 클릭해야 정상 참여됩니다. 기존 광고성 정보 수신 모두 동의된 경우, 바로 구매 입찰 화면으로 이동됩니다. 응모 이벤트 참여 완료는 마이페이지 > 구매입찰에서 확인 가능합니다. 당첨자에 한하여 거래 체결 관련 개별 메시지를 발송 드리며, 미당첨자에게는 별도의 연락을 드리지 않습니다. 당첨자에게 서류 요청 후, 72시간 내에 회신이 없으면 당첨이 자동 취소되며, 재추첨은 진행되지 않습니다. 제세공과금은  AMZDRAW에서 부담하며, 제세공과금 처리를 위해 가입하신 이메일 주소로 신분증 등 서류를 요청드립니다. 회원정보가 일치하지 않거나 부당한 방법으로 응모한 고객의 경우 당첨이 자동 취소되며, 및 추후 이벤트 응모 시 불이익을 받을 수 있습니다. 경품은 랜덤으로 지급되며, 교환 및 환불이 불가능합니다. 일부 제품은 출시 연기 및 수급 상황에 따라 배송이 늦어질 수 있습니다. 응모 시 등록한 결제정보로 결제가 진행되지 않으면 당첨이 즉시 취소되며, 후 순위 당첨자로 변경될 수 있습니다. </p>',
     },
-  },
-]
-
-export const adBanners = [
-  {
-    title: '코르테즈6',
-    description: '오직 AMZN에서만 만나보실 수 있어요',
-    link: '/product/0cNNAvJE7ofTbOE4yKd3',
-  },
-  {
-    title: '코르테즈19',
-    description: '브랜드의 모든 소식을 가장 먼저 만나보세요',
-    link: '/product/D4Zl473T1Hy5BMnRifEX',
   },
 ]

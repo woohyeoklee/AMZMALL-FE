@@ -1,12 +1,12 @@
+import useLike from '@/hooks/like/useLike'
 import { css } from '@emotion/react'
-import { useNavigate } from 'react-router-dom'
 import useProducts from '../product/hooks/useProducts'
 import Flex from '../shared/Flex'
-import ListColumn from '../shared/ListColumn'
+import ProductItemColumn from './ProductItemColumn'
 
 function ProductListColumn() {
-  const navigate = useNavigate()
   const { data: products } = useProducts()
+  const { data: likes, mutate: onLike } = useLike()
 
   if (products == null) {
     return null
@@ -16,25 +16,12 @@ function ProductListColumn() {
     <Flex css={productGrid}>
       {products.map((product) => (
         <div key={product.id} css={productItem}>
-          <ListColumn
-            top={
-              <img
-                src={product.imageUrls[0]}
-                alt="product"
-                width={250}
-                height={250}
-              />
-            }
-            contents={
-              <ListColumn.Texts
-                title={product.name}
-                subTitle={product.corpName}
-              />
-            }
-            bottom={product.price.toLocaleString() + '원'}
-            onClick={() => {
-              navigate(`/product/${product.id}`)
-            }}
+          <ProductItemColumn
+            product={product}
+            isLike={Boolean(
+              likes?.find((like) => like.productId === product.id),
+            )}
+            onLike={onLike}
           />
         </div>
       ))}

@@ -11,6 +11,7 @@ import Top from '@/components/shared/Top'
 import { useAlertContext } from '@/contexts/AlertContext'
 import useUser from '@/hooks/auth/useUser'
 import { getProduct } from '@/remote/product'
+import addDelimiter from '@/utils/addDelimiter'
 import { css } from '@emotion/react'
 import { useCallback } from 'react'
 import { useQuery } from 'react-query'
@@ -55,7 +56,7 @@ function ProductDetailPage() {
       <Flex direction="column">
         <Top title={name} subTitle={corpName} />
         <Text typography="t2" bold css={priceContainerStyles}>
-          {price.toLocaleString()}원
+          {`${addDelimiter(price)}원`}
         </Text>
         <Spacing size={20} />
         <Carousel images={data.imageUrls} />

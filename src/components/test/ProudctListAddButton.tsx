@@ -10,7 +10,16 @@ function ProudctListAddButton() {
     const batch = writeBatch(store)
     product_list.forEach((prouct) => {
       const docRef = doc(collection(store, COLLECTIONS.PRODUCT))
-      batch.set(docRef, prouct)
+      const productDocRef = {
+        name: prouct.name,
+        corpName: prouct.corpName,
+        mainImageUrl: prouct.imageUrls[0],
+        imageUrls: prouct.imageUrls,
+        benefit: prouct.benefit,
+        price: prouct.price,
+        promotion: prouct.promotion,
+      }
+      batch.set(docRef, productDocRef)
     })
 
     await batch.commit()

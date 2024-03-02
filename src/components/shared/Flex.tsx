@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { CSSProperties } from 'react'
 
 interface FlexProps {
+  display?: CSSProperties['display']
   align?: CSSProperties['alignItems']
   justify?: CSSProperties['justifyContent']
   direction?: CSSProperties['flexDirection']

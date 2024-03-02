@@ -1,3 +1,4 @@
+import addDelimiter from '@/utils/addDelimiter'
 import ListRow from '@shared/ListRow'
 import Spacing from '@shared/Spacing'
 import Text from '@shared/Text'
@@ -41,7 +42,7 @@ function RecommendProducts({
             contents={
               <ListRow.Texts
                 title={product.name}
-                subTitle={product.price.toLocaleString() + '원'}
+                subTitle={`${addDelimiter(product.price)}원`}
               />
             }
           />
