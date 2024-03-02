@@ -1,6 +1,6 @@
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useNavigate } from 'react-router-dom'
-import useProducts from '../productList/hooks/useProducts'
+import useProducts from '../product/hooks/useProducts'
 import Badge from '../shared/Badge'
 import ListRow from '../shared/ListRow'
 

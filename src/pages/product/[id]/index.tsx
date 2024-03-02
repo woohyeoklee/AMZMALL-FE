@@ -1,6 +1,8 @@
+import ActionButtons from '@/components/product/ActionButtons'
 import Carousel from '@/components/product/Carousel'
 import CountdownTimer from '@/components/product/CountdownTimer '
 import ProductBenefitsList from '@/components/product/ProductBenefitsList'
+import RecommendProducts from '@/components/product/RecommendProducts'
 import FixedBottomButton from '@/components/shared/FixedBottomButton'
 import Flex from '@/components/shared/Flex'
 import Spacing from '@/components/shared/Spacing'
@@ -45,7 +47,7 @@ function ProductDetailPage() {
     return null
   }
 
-  const { name, corpName, price, promotion, benefit } = data
+  const { name, corpName, price, promotion, benefit, recommendProducts } = data
   console.log('data', promotion?.EndTime)
 
   return (
@@ -59,6 +61,7 @@ function ProductDetailPage() {
         <Carousel images={data.imageUrls} />
         <Spacing size={20} />
         <CountdownTimer promotionEndTime={promotion?.EndTime} />
+        <ActionButtons product={data} />
         <ProductBenefitsList benefit={benefit} id={id} />
         <Spacing size={20} />
         {promotion != null ? (
@@ -67,6 +70,8 @@ function ProductDetailPage() {
             <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
           </Flex>
         ) : null}
+        <RecommendProducts recommendProducts={recommendProducts} />
+        <Spacing size={80} /> // 하단에 고정된 버튼을 위한 여백
         <FixedBottomButton
           label="제품 출시 전 미리 정보를 저장해 보세요!"
           onClick={moveToDrawPage}
@@ -86,8 +91,8 @@ const priceContainerStyles = css`
 `
 
 const termsContainerStyles = css`
-  margin-top: 80px;
-  padding: 0 24px 80px 24px;
+  margin-top: 20px;
+  padding: 0 24px 0 24px;
 `
 
 export default ProductDetailPage

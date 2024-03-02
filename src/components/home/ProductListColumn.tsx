@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { useNavigate } from 'react-router-dom'
-import useProducts from '../productList/hooks/useProducts'
+import useProducts from '../product/hooks/useProducts'
 import Flex from '../shared/Flex'
 import ListColumn from '../shared/ListColumn'
 

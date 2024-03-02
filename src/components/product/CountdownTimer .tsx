@@ -39,8 +39,7 @@ const CountdownTimer = ({
     return null
   }
 
-  const promotionTxt =
-    timeRemaining > 0 ? `${formatTime(timeRemaining)}` : '프로모션 종료'
+  const promotionTxt = timeRemaining > 0 ? `${formatTime(timeRemaining)}` : ''
 
   return <div css={timerContainer}>{promotionTxt}</div>
 }
@@ -49,6 +48,7 @@ const timerContainer = css`
   font-size: 36px;
   font-weight: bold;
   margin: 16px auto;
+  text-align: center;
 `
 
 export default CountdownTimer

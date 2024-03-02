@@ -1,4 +1,5 @@
 export interface Product {
+  id: string
   name: string
   corpName: string
   price: number
@@ -12,4 +13,5 @@ export interface Product {
     terms: string
   }
   delivery?: string
+  recommendProducts: string[]
 }
