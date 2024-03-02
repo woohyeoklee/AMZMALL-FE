@@ -10,9 +10,12 @@ import Text from '@shared/Text'
 import TextField from '@shared/TextField'
 import { colors } from '@styles/colorPalette'
 
+import useGoogleSignIn from '@/hooks/useGoogleSignIn'
 import { ChangeEvent, useCallback, useMemo, useState } from 'react'
 
 function Form({ onSubmit }: { onSubmit: (formValues: FormValues) => void }) {
+  const { signin } = useGoogleSignIn()
+
   const [formValues, setFormValues] = useState({
     email: '',
     password: '',
@@ -31,6 +34,12 @@ function Form({ onSubmit }: { onSubmit: (formValues: FormValues) => void }) {
 
   return (
     <Flex direction="column" css={formContainerStyles}>
+      <div css={topContainerStyles}>
+        <Text bold typography="t3">
+          AMZMALL
+        </Text>
+        <Text typography="t5">신발을 선택하고 스타일을 완성하세요.</Text>
+      </div>
       <TextField
         label="이메일"
         name="email"
@@ -62,8 +71,31 @@ function Form({ onSubmit }: { onSubmit: (formValues: FormValues) => void }) {
       <Spacing size={12} />
 
       <Link to="/signup" css={linkStyles}>
-        <Text typography="t7">아직 계정이 없으신가요?</Text>
+        <Text typography="t7">아직 계정이 없으신가요? </Text>
+        <Text bold typography="t7">
+          회원가입하기
+        </Text>
       </Link>
+
+      <Spacing size={20} />
+      <div css={snsFormStyles}>
+        <Text bold typography="t5">
+          SNS 계정으로 로그인
+        </Text>
+        <Button weak onClick={signin} css={googleButtonStyles}>
+          <div className="flex gap-1">
+            <img
+              src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Google-256.png"
+              alt="google"
+              width="20"
+              height="20"
+            />
+            <Text color="blue" bold typography="t4">
+              OOGLE 로그인
+            </Text>
+          </div>
+        </Button>
+      </div>
     </Flex>
   )
 }
@@ -86,12 +118,38 @@ const formContainerStyles = css`
   padding: 24px;
 `
 
+const topContainerStyles = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
 const linkStyles = css`
+  display: flex;
+  flex-direction: column;
   text-align: center;
 
   & > span:hover {
     color: ${colors.orange};
   }
+`
+
+const snsFormStyles = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+`
+
+const googleButtonStyles = css`
+  width: 300px;
+  height: 50px;
+  display: flex;
+  border: 1px solid ${colors.blue};
+  justify-content: center;
+  align-items: center;
 `
 
 export default Form

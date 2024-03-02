@@ -1,4 +1,3 @@
-import AuthGuard from '@components/auth/AuthGuard'
 import { AlertContextProvider } from '@contexts/AlertContext'
 import { Global } from '@emotion/react'
 import globalStyles from '@styles/globalStyles'
@@ -25,9 +24,7 @@ root.render(
     <RecoilRoot>
       <QueryClientProvider client={client}>
         <AlertContextProvider>
-          <AuthGuard>
-            <App />
-          </AuthGuard>
+          <App />
         </AlertContextProvider>
       </QueryClientProvider>
     </RecoilRoot>
