@@ -3,6 +3,7 @@ import ProductListRow from '@/components/home/ProductListRow'
 import ListRow from '@/components/shared/ListRow'
 import Spacing from '@/components/shared/Spacing'
 import Top from '@/components/shared/Top'
+import Video from '@/components/shared/Video'
 import { Suspense } from 'react'
 
 function HomePage() {
@@ -13,7 +14,7 @@ function HomePage() {
         subTitle="Welcome to a world of limited edition treasures"
       />
       {/* 이벤트 배너로 대체할 것 */}
-      {/* 동영상 삽입될 것 */}
+      <Video />
       <Top title="Popular Items" subTitle="Discover what's trending!" />
       <ProductListColumn />
       {/* 이미지 갤러리 구현할 것 */}
