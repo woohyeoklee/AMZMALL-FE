@@ -3,6 +3,7 @@ import Carousel from '@/components/product/Carousel'
 import CountdownTimer from '@/components/product/CountdownTimer '
 import ProductBenefitsList from '@/components/product/ProductBenefitsList'
 import RecommendProducts from '@/components/product/RecommendProducts'
+import Review from '@/components/product/Review'
 import FixedBottomButton from '@/components/shared/FixedBottomButton'
 import Flex from '@/components/shared/Flex'
 import Spacing from '@/components/shared/Spacing'
@@ -71,6 +72,7 @@ function ProductDetailPage() {
             <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
           </Flex>
         ) : null}
+        <Review productId={id} />
         <RecommendProducts recommendProducts={recommendProducts} />
         <Spacing size={80} /> // 하단에 고정된 버튼을 위한 여백
         <FixedBottomButton

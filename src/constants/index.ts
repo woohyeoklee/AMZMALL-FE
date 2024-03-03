@@ -3,4 +3,5 @@ export const COLLECTIONS = {
   PRODUCT_DRAW: 'PRODUCT_DRAW',
   LIKE: 'LIKE',
   USER: 'USER',
+  REVIEW: 'REVIEW',
 } as const
