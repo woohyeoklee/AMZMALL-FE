@@ -3,7 +3,9 @@ import ProductListRow from '@/components/home/ProductListRow'
 import ListRow from '@/components/shared/ListRow'
 import Spacing from '@/components/shared/Spacing'
 import Top from '@/components/shared/Top'
-import Video from '@/components/shared/Video'
+import Video from '@/components/home/Video'
+import withSuspense from '@/components/shared/hocs/withSuspense'
+import FullPageLoader from '@/components/shared/FullPageLoader'
 import { Suspense } from 'react'
 
 function HomePage() {
@@ -31,4 +33,8 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default withSuspense(HomePage, {
+  fallback: (
+    <FullPageLoader message={'잠시 기다려주세요, 화면을 불러오고 있습니다.'} />
+  ),
+})

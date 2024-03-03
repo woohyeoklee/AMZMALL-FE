@@ -41,6 +41,7 @@ const listRowLeftStyles = css`
 
 const listRowContentsStyles = css`
   flex: 1;
+  padding-right: 24px;
 `
 
 function ListRowTexts({

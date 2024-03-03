@@ -1,18 +1,19 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { lazy } from 'react'
 
-import DrawPage from '@/pages/draw/[id]'
-import DrawListPage from '@/pages/my/drawList'
-import HomePage from '@pages/home'
-import MyPage from '@pages/my'
-import LikePage from '@pages/my/like'
-import ProductDetailPage from '@pages/product/[id]'
-import SignInPage from '@pages/signin'
-import SignUpPage from '@pages/signup'
-import TestPage from '@pages/test'
-
-import DrawDonePage from '@/pages/draw/done'
-import PrivateRouter from '@components/auth/PrivateRouter'
 import { Suspense } from 'react'
+
+const DrawPage = lazy(() => import('@/pages/draw/[id]'))
+const DrawDonePage = lazy(() => import('@/pages/draw/done'))
+const HomePage = lazy(() => import('@pages/home'))
+const MyPage = lazy(() => import('@pages/my'))
+const LikePage = lazy(() => import('@pages/my/like'))
+const ProductDetailPage = lazy(() => import('@pages/product/[id]'))
+const SignInPage = lazy(() => import('@pages/signin'))
+const SignUpPage = lazy(() => import('@pages/signup'))
+const TestPage = lazy(() => import('@pages/test'))
+const DrawListPage = lazy(() => import('@/pages/my/drawList'))
+const PrivateRouter = lazy(() => import('@components/auth/PrivateRouter'))
 
 export default function Router() {
   return (
@@ -50,9 +51,7 @@ export default function Router() {
         path="/draw/:id"
         element={
           <PrivateRouter>
-            <Suspense fallback={<></>}>
-              <DrawPage />
-            </Suspense>
+            <DrawPage />
           </PrivateRouter>
         }
       />

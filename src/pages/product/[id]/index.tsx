@@ -9,6 +9,8 @@ import Flex from '@/components/shared/Flex'
 import Spacing from '@/components/shared/Spacing'
 import Text from '@/components/shared/Text'
 import Top from '@/components/shared/Top'
+import withSuspense from '@/components/shared/hocs/withSuspense'
+import FullPageLoader from '@/components/shared/FullPageLoader'
 import { useAlertContext } from '@/contexts/AlertContext'
 import useUser from '@/hooks/auth/useUser'
 import { getProduct } from '@/remote/product'
@@ -96,4 +98,8 @@ const termsContainerStyles = css`
   padding: 0 24px 0 24px;
 `
 
-export default ProductDetailPage
+export default withSuspense(ProductDetailPage, {
+  fallback: (
+    <FullPageLoader message={'잠시 기다려주세요, 화면을 불러오고 있습니다.'} />
+  ),
+})

@@ -33,7 +33,7 @@ function MyPage() {
 
       <Spacing size={80} />
       <div css={likeContainer}>
-        <ul>
+        <ul css={likeStyle}>
           <Link to="/my/like">
             <ListRow
               left={
@@ -47,7 +47,7 @@ function MyPage() {
               contents={
                 <ListRow.Texts
                   title="장바구니"
-                  subTitle="장바구니를 확인하고 구매할 상품을 선택하세요."
+                  subTitle="장바구니 목록을 확인하세요."
                 />
               }
               withArrow={true}
@@ -66,7 +66,7 @@ function MyPage() {
               contents={
                 <ListRow.Texts
                   title="구매내역"
-                  subTitle="구매한 상품을 확인하세요."
+                  subTitle="구매한 상품 내역을 확인하세요."
                 />
               }
               withArrow={true}
@@ -79,7 +79,12 @@ function MyPage() {
 }
 
 const likeContainer = css`
-  width: 500px;
+  display: flex;
+  gap: 20px;
+`
+
+const likeStyle = css`
+  max-width: 100%;
 `
 
 export default MyPage
