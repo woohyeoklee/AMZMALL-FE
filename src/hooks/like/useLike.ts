@@ -34,7 +34,6 @@ function useLike() {
     {
       onSuccess: () => {
         client.invalidateQueries('like')
-        console.log('좋아요 토글 성공')
       },
       onError: (e: Error) => {
         if (e.message === '로그인 필요') {

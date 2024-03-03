@@ -34,27 +34,44 @@ function MyPage() {
       <Spacing size={80} />
       <div css={likeContainer}>
         <ul>
-          <li>
-            <Link to="/my/like">
-              <ListRow
-                left={
-                  <img
-                    src="https://cdn4.iconfinder.com/data/icons/business-and-finance-colorful-free-hand-drawn-set/100/shopping_cart-256.png"
-                    alt="장바구니"
-                    width="40px"
-                    height="40px"
-                  />
-                }
-                contents={
-                  <ListRow.Texts
-                    title="장바구니"
-                    subTitle="장바구니를 확인하고 구매할 상품을 선택하세요."
-                  />
-                }
-                withArrow={true}
-              />
-            </Link>
-          </li>
+          <Link to="/my/like">
+            <ListRow
+              left={
+                <img
+                  src="https://cdn4.iconfinder.com/data/icons/business-and-finance-colorful-free-hand-drawn-set/100/shopping_cart-256.png"
+                  alt="장바구니"
+                  width="40px"
+                  height="40px"
+                />
+              }
+              contents={
+                <ListRow.Texts
+                  title="장바구니"
+                  subTitle="장바구니를 확인하고 구매할 상품을 선택하세요."
+                />
+              }
+              withArrow={true}
+            />
+          </Link>
+          <Link to="/my/drawList">
+            <ListRow
+              left={
+                <img
+                  src="https://cdn4.iconfinder.com/data/icons/delivery-121/62/order-processing-shopping-buy-confirm-256.png"
+                  alt="구매내역"
+                  width="40px"
+                  height="40px"
+                />
+              }
+              contents={
+                <ListRow.Texts
+                  title="구매내역"
+                  subTitle="구매한 상품을 확인하세요."
+                />
+              }
+              withArrow={true}
+            />
+          </Link>
         </ul>
       </div>
     </Flex>

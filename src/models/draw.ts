@@ -12,10 +12,8 @@ export interface DrawValues {
   terms: Array<Term['id']> // 약관 정보인데, Id값라고 보면 됨
   appliedAt: Date
   size: string
-  delivery: string // 아래 boolean 값으로 변경되서 삭제예정
-  payment: string // 아래 boolean 값으로 변경되서 삭제예정
-  isDelivery: boolean
-  isPayment: boolean
+  isDelivery: boolean // true: 배송 수령, false: 직접 수령
+  isPayment: boolean // true: 카카오페이, false: 일반결제
   name?: string
   phone?: string
   email?: string

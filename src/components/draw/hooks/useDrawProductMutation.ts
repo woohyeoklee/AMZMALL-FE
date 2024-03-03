@@ -22,7 +22,7 @@ function useDrawProductMutation({
       open({
         title: '신청 실패',
         onButtonClick: () => {
-          onError()
+          console.log('error')
         },
       })
     },

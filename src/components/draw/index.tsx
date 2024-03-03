@@ -1,4 +1,3 @@
-import ProductInfo from '@/components/draw/ProductInfo'
 import useUser from '@/hooks/auth/useUser'
 import { DrawValues, DRAW_STATUS } from '@/models/draw'
 import BasicInfo from '@components/draw/BasicInfo'
@@ -6,6 +5,7 @@ import Terms from '@components/draw/Terms'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ProgressBar from '../shared/ProgressBar'
+import ProductInfo from './ProductInfo'
 
 function Draw({ onSubmit }: { onSubmit: (drawValues: DrawValues) => void }) {
   const user = useUser()
@@ -34,13 +34,11 @@ function Draw({ onSubmit }: { onSubmit: (drawValues: DrawValues) => void }) {
         status: DRAW_STATUS.REDAY,
       } as DrawValues)
     } else {
-      console.log('저장', drawValues)
       localStorage.setItem(storageKey, JSON.stringify(drawValues))
     }
   }, [drawValues, drawValues.step, onSubmit, storageKey])
 
   const handleTemsChange = (terms: DrawValues['terms']) => {
-    console.log(terms)
     setDrawValues((prevValues) => ({
       ...prevValues,
       terms,
@@ -49,7 +47,7 @@ function Draw({ onSubmit }: { onSubmit: (drawValues: DrawValues) => void }) {
   }
 
   const handleBasicInfoChange = (
-    infoValues: Pick<DrawValues, 'size' | 'delivery' | 'payment'>,
+    infoValues: Pick<DrawValues, 'size' | 'isDelivery' | 'isPayment'>,
   ) => {
     setDrawValues((prevValues) => ({
       ...prevValues,
@@ -59,7 +57,7 @@ function Draw({ onSubmit }: { onSubmit: (drawValues: DrawValues) => void }) {
   }
 
   const handleProductInfoChange = (
-    ProductInfoValues: Pick<DrawValues, 'isDelivery' | 'isPayment'>,
+    ProductInfoValues: Pick<DrawValues, 'name' | 'phone' | 'address' | 'email'>,
   ) => {
     setDrawValues((prevValues) => ({
       ...prevValues,

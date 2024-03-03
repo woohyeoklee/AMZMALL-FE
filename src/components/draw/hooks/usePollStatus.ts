@@ -18,7 +18,7 @@ function usePollStatus({ enabled, onSuccess, onError }: usePollStatusProps) {
       }
     },
     onError: () => {
-      onError()
+      console.log('error')
     },
   })
 }

@@ -23,8 +23,6 @@ function MyImage({
   const handleUploadImage = async (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
 
-    console.log('files', files)
-
     const currentUser = getAuth(app).currentUser
 
     if (files == null || user == null || currentUser == null) {

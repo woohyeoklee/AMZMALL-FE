@@ -1,10 +1,14 @@
 import { DrawValues } from '@/models/draw'
-import { MouseEvent, useCallback, useState } from 'react'
-import Button from '../shared/Button'
+import { useState } from 'react'
 import FixedBottomButton from '../shared/FixedBottomButton'
 import Spacing from '../shared/Spacing'
+import Text from '../shared/Text'
+import TextField from '../shared/TextField'
 
-type ProductInfoValues = Pick<DrawValues, 'isDelivery' | 'isPayment'>
+type ProductInfoValues = Pick<
+  DrawValues,
+  'name' | 'phone' | 'address' | 'email'
+>
 
 function ProductInfo({
   onNext,
@@ -13,65 +17,58 @@ function ProductInfo({
 }) {
   const [productInfoValues, setProductInfoValues] = useState<ProductInfoValues>(
     {
-      isDelivery: false,
-      isPayment: false,
+      name: '',
+      phone: '',
+      address: '',
+      email: '',
     },
   )
 
-  const { isDelivery, isPayment } = productInfoValues
-
-  const handleButtonClick = useCallback((e: MouseEvent<HTMLButtonElement>) => {
-    const $button = e.target as HTMLButtonElement
-
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
     setProductInfoValues((prevValues) => ({
       ...prevValues,
-      [$button.name]: JSON.parse($button.dataset.value as string),
+      [name]: value,
     }))
-  }, [])
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    onNext(productInfoValues)
+  }
 
   return (
-    <div>
-      <Button.Group title="배송 선택">
-        <Button
-          name="isDelivery"
-          weak={isDelivery === false}
-          size="medium"
-          data-value={true}
-          onClick={handleButtonClick}
-        >
-          직접 수령
-        </Button>
-        <Button
-          name="isDelivery"
-          weak={isDelivery === true}
-          size="medium"
-          data-value={false}
-          onClick={handleButtonClick}
-        >
-          택배 수령
-        </Button>
-      </Button.Group>
-      <Spacing size={10} />
-      <Button.Group title="결제 선택">
-        <Button
-          name="isPayment"
-          weak={isPayment === true}
-          size="medium"
-          data-value={false}
-          onClick={handleButtonClick}
-        >
-          일반결제
-        </Button>
-        <Button
-          name="isPayment"
-          weak={isPayment === false}
-          size="medium"
-          data-value={true}
-          onClick={handleButtonClick}
-        >
-          카카오페이
-        </Button>
-      </Button.Group>
+    <div style={{ padding: 24 }}>
+      <Text bold={true}>예약정보</Text>
+      <Spacing size={16} />
+      <form onSubmit={handleSubmit}>
+        <TextField
+          label="Name"
+          value={productInfoValues.name}
+          onChange={handleChange}
+          name="name"
+        />
+        <TextField
+          label="Phone"
+          value={productInfoValues.phone}
+          onChange={handleChange}
+          name="phone"
+        />
+        <TextField
+          label="Address"
+          value={productInfoValues.address}
+          onChange={handleChange}
+          name="address"
+        />
+        <TextField
+          label="Email"
+          value={productInfoValues.email}
+          onChange={handleChange}
+          name="email"
+        />
+      </form>
+      <Spacing size={80} />
+
       <FixedBottomButton
         label="다음"
         onClick={() => onNext(productInfoValues)}

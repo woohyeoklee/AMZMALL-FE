@@ -59,7 +59,9 @@ function DrawPage() {
           status: DRAW_STATUS.COMPLETE,
         },
       })
-      navigate('/draw/done?success=true', { replace: true })
+      navigate(`/draw/done?success=true&userId=${user?.uid}&productId=${id}`, {
+        replace: true,
+      })
     },
     onError: async () => {
       await updateDrawProduct({

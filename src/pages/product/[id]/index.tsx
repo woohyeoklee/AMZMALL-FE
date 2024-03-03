@@ -36,7 +36,6 @@ function ProductDetailPage() {
         title: '로그인이 필요합니다',
         onButtonClick: () => {
           localStorage.setItem('redirectUrl', location.pathname)
-          console.log('redirectUrl', location.pathname)
           navigate('/signin')
         },
       })
@@ -50,7 +49,6 @@ function ProductDetailPage() {
   }
 
   const { name, corpName, price, promotion, benefit, recommendProducts } = data
-  console.log('data', promotion?.EndTime)
 
   return (
     <div>

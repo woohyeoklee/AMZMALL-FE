@@ -9,6 +9,7 @@ import {
   where,
 } from 'firebase/firestore'
 import { store } from './firebase'
+import { getProduct } from './product'
 
 export async function drawProduct(drawValues: DrawValues) {
   return addDoc(collection(store, COLLECTIONS.PRODUCT_DRAW), drawValues)
@@ -55,4 +56,27 @@ export async function getDrawedProduct({
   const [drawed] = snapshot.docs
 
   return drawed.data() as DrawValues
+}
+
+export async function getDrawedProducts({ userId }: { userId: string }) {
+  const drawedQuery = query(
+    collection(store, COLLECTIONS.PRODUCT_DRAW),
+    where('userId', '==', userId),
+  )
+  const drawSnapshot = await getDocs(drawedQuery)
+
+  const result = []
+
+  for (const drawDoc of drawSnapshot.docs) {
+    const draw = {
+      id: drawDoc.id,
+      ...(drawDoc.data() as DrawValues),
+    }
+    const product = await getProduct(draw.productId)
+    result.push({
+      draw,
+      product,
+    })
+  }
+  return result
 }
