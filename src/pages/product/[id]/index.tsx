@@ -72,7 +72,7 @@ function ProductDetailPage() {
         ) : null}
         <Review productId={id} />
         <RecommendProducts recommendProducts={recommendProducts} />
-        <Spacing size={80} /> // 하단에 고정된 버튼을 위한 여백
+        <Spacing size={80} />
         <FixedBottomButton
           label="제품 출시 전 미리 정보를 저장해 보세요!"
           onClick={moveToDrawPage}
