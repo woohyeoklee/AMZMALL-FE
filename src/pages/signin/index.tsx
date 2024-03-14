@@ -49,6 +49,7 @@ function SignInPage() {
   return (
     <div>
       <Form onSubmit={handleSubmit} />
+      <button onClick={() => navigate('/test')}>test 주소로 이동</button>
     </div>
   )
 }
